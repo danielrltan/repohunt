@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+*.log
+.env
+.env.local
+.DS_Store
+
+# Local Claude Code / gstack config and artifacts — never publish
+CLAUDE.md
+.claude/
+.context/
+scripts/
