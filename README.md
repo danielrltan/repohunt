@@ -13,19 +13,16 @@
 
 When you start a feature, the right first move is often "find a repo to fork,
 study, or avoid" rather than building from scratch. GitHub's native search is a
-flat keyword list with no judgment. Paid tools solve this with semantic embeddings
-over a pre-indexed corpus, which means real infrastructure and a recurring bill.
-repohunt takes the free path: GitHub already maintains the keyword index, the
+flat keyword list with no judgment. Thankfully, GitHub already maintains the keyword index; the
 calling agent supplies the query variety on the way in and the ranking judgment on
 the way out.
 
-The tradeoff, stated plainly: keyword search has weaker intent-recall than semantic
-search. repohunt narrows the gap by (a) searching README **bodies**, not just names
+While keyword search has a somewhat weak intent-recall than say semantic search, this tool narrows the gap by (a) searching README **bodies**, not just names
 and descriptions, and (b) firing 4-8 agent-expanded query variations per call.
 
 ## Quick start
 
-### 1. Get a GitHub token (~2 minutes, read-only)
+### 1. Get a GitHub token (read-only)
 
 A token raises your search rate limit from ~10/min (unauthenticated, degraded) to
 30/min. **Public-repo read needs no scopes at all.**
