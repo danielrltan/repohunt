@@ -30,7 +30,7 @@ A token raises your search rate limit from ~10/min (unauthenticated, degraded) t
 **Classic token (simplest):**
 1. Open <https://github.com/settings/tokens/new>
 2. Note: `repohunt`. Expiration: your choice.
-3. **Select NO scopes.** Public read needs none. Do not check `public_repo`, that's a *write* scope.
+3. **Select NO scopes.** Public read needs none. 
 4. Generate and copy the `ghp_...` token.
 
 **Fine-grained token (most locked-down):** open <https://github.com/settings/personal-access-tokens/new>, set Repository access to **Public repositories (read-only)** with no account permissions.
@@ -58,7 +58,7 @@ Restart the host. You should see `find_repos` in the tool list. The same
 `command`/`args`/`env` shape works for Cursor, Claude Code, or any MCP host.
 
 If `GITHUB_TOKEN` is missing, repohunt exits immediately with a message telling you
-exactly how to fix it. It never silently runs unauthenticated.
+exactly how to fix it. It never runs silently unauthenticated.
 
 ## The `find_repos` tool
 
