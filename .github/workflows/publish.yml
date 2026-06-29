@@ -24,6 +24,13 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
-      - run: npm publish --access public --provenance
+      - name: Publish to npm (skip if this version is already published)
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if npm view "repohunt@$VERSION" version >/dev/null 2>&1; then
+            echo "repohunt@$VERSION is already on npm — skipping publish."
+          else
+            npm publish --access public --provenance
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
